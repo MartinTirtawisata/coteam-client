@@ -1,5 +1,12 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: o3brMctCfJNN8DFC8Vtu1j/9JR0EWcN/rpcSCZ31GWP6Hm/rhlG1h+YTY4DR9VqHsE1rO6Ckaifk013lUNi0kYsipPzvkU+JLdf5zLP9ZN6OKvtTJlnvWc8B66JGIyuWBPCZugKBjSvm57601X2kFEqf1oSQyLRoe2/4oDGNHH0X91/WB/7hIpPlFOUXLtOdyQHOQmPxUYbn9x7Gf4viRpOZz7RGfAwkbKiSfPp+za/jd1wQAFzcT540tdwJ8xessWm8JSx5vUPZq0ZXZTmcAww1INgrZjKVB0yoFs/E31aGxu7MSgyRyGZ8m7NkVKEdyFPFCgwaSZGtfiEsDF/u/2Up6SrgCelOttiJ8PdjWZql6R18Cps1gZZL8gDtKuwvbRfdk1KdI0KkjFsGNSwzWj4PFUsUIPqfZ8+jlVfEo8voK2HRGIfMAj0VVu/8TeIaGOFbOAq4Av6Tnh/YPnC7SxqS6ouZ7F/Wy6MuDuQCrGMpCpEQdMO2dLWr/MJBHhhQKcVB/qsVDv3B5T6CPUu0j+oU+QvS382DHXSF7TW4CABPBqsJMZxWclkUDSscn4IRfyjXADIxDlQiHYhbPR2PjxD1pEr4rvvJhwmpI+28D/FkIqi1Rr1bsj09EM9/Y388y/VcwNKqwB16Cqo23RUrEczBxMFBl6p5V1xgb4llhE4=
+  app: hidden-shelf-59966
+  on:
+    repo: MartinTirtawisata/coteam-client
