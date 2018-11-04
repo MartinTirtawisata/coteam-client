@@ -1,6 +1,9 @@
 import React from 'react';
 import SocialCardContent from './social-card-content';
+
 import './social-card.css';
+
+import {connect} from 'react-redux';
 
 export default function SocialCard(props) {
     return (
@@ -22,3 +25,7 @@ export default function SocialCard(props) {
         </div>
     )
 }
+
+// Parent: SocialCardSection
+// Child: SocialCardContent
+

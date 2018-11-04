@@ -1,0 +1,5 @@
+.question-form-section {
+    width: 1000px;
+    border: 1px black solid;
+    flex: 1
+}

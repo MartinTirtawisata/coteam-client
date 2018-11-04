@@ -1,0 +1,31 @@
+.top-navbar {
+    width: 100%;
+    background-color: gray;
+    height: 50px;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 1200px;
+    border: 1px black solid;
+    margin: 20px auto 0px auto;;
+}
+
+ul {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+li {
+    display: inline;
+    padding: 5px;
+}
+
+.logo-nav {
+    float: left;
+}
+
+.login-register-nav {
+    float: right;
+}

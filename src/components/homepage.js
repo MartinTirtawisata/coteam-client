@@ -1,57 +1,25 @@
 import React from 'react';
 import './homepage.css';
-import {Card, Icon, Avatar} from 'antd';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Progress, Button} from 'antd';
+import {Link} from 'react-router-dom';
 
-import TopNav from './topnav';
 import SocialCardSection from './social-card-section';
+import Sidebar from './sidebar';
 
-export default function HomePage(props) {
-    return (
-        // <Router>
+export default class HomePage extends React.Component {
+    render (){
+        return(
             <div>
-                <TopNav />
-
-                <div className="main-section">
-                {/* <Route exact path="/social-card" component={SocialCardSection } /> */}
-                <SocialCardSection userInfo={props.userInfo}/>
-                <QuestionFormSection />
+                {/* <div className="sidebar">
+                    <Sidebar />
+                </div> */}
+                <div className="content-page">
+                    {/* <Progress type="circle" percent={30} width={80} /> */}
+                    <Link to='/social-card-form'><Button className="add-social-card-btn" type="dashed" size="large">Create a social card</Button></Link>
+                    <Link to='/question-form'><Button type="dashed" size="large">Team reflection</Button></Link>
+                    <SocialCardSection />
                 </div>
             </div>
-        // </Router>
-    )
-}
-
-
-function QuestionFormSection(){
-    return (
-        <div className="question-form-section">
-            <form>
-                <QuestionForm />
-                <QuestionForm />
-                <QuestionForm />
-                <QuestionForm />
-                <QuestionForm />
-            </form>
-            <button>Submit</button>
-        </div>
-    )
-}
-
-function QuestionForm(){
-    return (
-        <div className="question-form">
-            <h3>Question</h3>
-            <label>1</label>
-            <input type="radio"></input>
-            <label>2</label>
-            <input type="radio"></input>
-            <label>3</label>
-            <input type="radio"></input>
-            <label>4</label>
-            <input type="radio"></input>
-            <label>5</label>
-            <input type="radio"></input>
-        </div>
-    )
+        )
+    }
 }

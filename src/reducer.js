@@ -1,6 +1,6 @@
 // import actions;
 
-const InitialuserInfo = [
+const initialUserInfo = [
     {
         first_name: "Marco", 
         last_name: "Polo", 
@@ -21,3 +21,6 @@ const InitialuserInfo = [
     }
 ]
 
+export default (state = initialUserInfo, actions) => {
+    return state;
+}
