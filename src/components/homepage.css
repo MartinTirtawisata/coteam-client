@@ -1,11 +1,36 @@
-.sidebar {
+/* .sidebar {
     width: 300px;
 }
+*/
 
 .content-page{
-    width: 900px;
-}
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+} 
 
 .add-social-card-btn {
     
+}
+
+.top-header {
+    display: flex;
+    width: 100%;
+    padding: 5px 0 0 15px;
+
+}
+
+.user-display {
+    width: 300px;
+    font-weight: bold;
+
+}
+
+.user-title {
+    font-size: 14px;
+}
+
+.progress-checklist-display{
+    width: 500px; 
+    padding-left: 50px;
 }

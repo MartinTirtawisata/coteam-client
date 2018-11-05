@@ -3,4 +3,10 @@
     border: 1px solid black;
 }
 
+h1 {
+    padding-left: 50px;
+    padding-top: 10px;
+    font-size: 18px;
+}
+
 

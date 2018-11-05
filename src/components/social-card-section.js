@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 export function SocialCardSection(props) {
     return (
         <div className="social-card-section">
+            <h1>Feed</h1>
             <SocialCard userInfo={props.userInfo[0]} />
             <SocialCard userInfo={props.userInfo[1]} />
         </div>

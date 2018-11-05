@@ -7,8 +7,9 @@ import QuestionForm from './question-form';
 export default function QuestionFormSection(){
     return (
         <div className="question-form-section">
+            <h1>Team Engagement Survey</h1>
             <form>
-                <QuestionForm />
+                <QuestionForm question="" />
                 <QuestionForm />
                 <QuestionForm />
                 <QuestionForm />
