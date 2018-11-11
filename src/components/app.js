@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import HomePage from './homepage';
-import QuestionFormSection from './question-form-section';
-import Register from './register';
+import SurveySection from './survey-section';
+import RegisterForm from './register';
 import Login from './login';
 import SocialCardForm from './social-card-form';
 import LandingPage from './landingpage';
@@ -23,13 +23,13 @@ export default function App(props) {
                     </ul>
                 </nav>
                 <Route exact path="/" component={LandingPage} />
-                <div className="main-section">
+                <div style={{maxWidth: '800px', marginLeft:'auto', marginRight:'auto'}}>
                     <main>
                         <Route exact path="/home" component={HomePage} />
-                        <Route exact path="/question-form" component={QuestionFormSection} />
-                        <Route exact path="/register" component={Register} />
+                        <Route exact path="/survey" component={SurveySection} />
+                        <Route exact path="/register" component={RegisterForm} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path='/social-card-form' component={SocialCardForm} />
+                        <Route exact path='/social-card' component={SocialCardForm} />
                     </main>
                 </div>
             </div>

@@ -5,20 +5,44 @@ import './social-card-section.css'
 
 import {connect} from 'react-redux';
 
+import {addSocialCard, fetchCard} from '../actions/actionIndex';
 
-export function SocialCardSection(props) {
-    return (
-        <div className="social-card-section">
-            <h1>Feed</h1>
-            <SocialCard userInfo={props.userInfo[0]} />
-            <SocialCard userInfo={props.userInfo[1]} />
-        </div>
-    )
+
+export class SocialCardSection extends React.Component {
+    componentDidMount(){
+        this.props.dispatch(fetchCard());
+    }
+
+    addSocialCard(first_name, last_name, job_title, experience, interests, personality, thoughts) {
+        this.props.dispatch(addSocialCard(first_name, last_name, job_title, experience, interests, personality, thoughts))
+    }
+    render(){
+        return (
+            <div className="social-card-section">
+                <h1>Feed</h1>
+                <SocialCard card={this.props} />
+            </div>
+        )
+    }
 }
 
+// SocialCardSection.defaultProps = {
+//     userInfo: {
+//         first_name: "First Name",
+//         last_name: "Last Name",
+//         job_title: "Job Title",
+//         experience: "Experience",
+//         interests: "Interests",
+//         personality: "Personality",
+//         thoughts: "Thoughts",
+//     }
+// }
+
 const mapStateToProps = state => ({
-    userInfo: state
+    card: state
 })
+
+
 
 export default connect(mapStateToProps)(SocialCardSection);
 

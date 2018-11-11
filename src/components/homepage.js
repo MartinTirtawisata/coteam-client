@@ -6,15 +6,12 @@ import {Progress, Button} from 'antd';
 import {Link} from 'react-router-dom';
 
 import SocialCardSection from './social-card-section';
-import Sidebar from './sidebar';
+// import Sidebar from './sidebar';
 
 export default class HomePage extends React.Component {
     render (){
         return(
-            <div>
-                {/* <div className="sidebar">
-                    <Sidebar />
-                </div> */}
+            <div className="main-section">
                 <div className="content-page">
                     <div className="top-header">
                         <div className="user-display">
@@ -22,18 +19,18 @@ export default class HomePage extends React.Component {
                             <p className="user-title">Software Engineer</p>
                         </div>
                         <div className="progress-checklist-display">
-                            <Progress type="circle" percent={100} width={60} format={() => "Done"}  />
-                            <Progress type="circle" percent={100} width={60} format={() => "Done"}  />
-                            
+                        <Link to='/social-card'><Progress style={{paddingRight:'20px'}} type="circle" percent={100} width={80} format={() => "Social Card"}  /></Link>
+                        <Link to='/survey'><Progress style={{paddingRight:'20px'}} type="circle" percent={50} width={80} format={() => "Team Reflection"}  /></Link>
+                        {/* <Link to='/survey'><Progress type="circle" percent={0} width={80} format={() => "Timeline"}  /></Link>
+                             */}
                         </div>
                     </div>
-                    
-                    <Link to='/social-card-form'><Button className="add-social-card-btn" type="dashed" size="large">Create a social card</Button></Link>
-                    <Link to='/question-form'><Button type="dashed" size="large">Team reflection</Button></Link>
-                    
-
-
                     <SocialCardSection />
+                </div>
+                <div className="sidebar-menu">
+                    <Link to='/social-card'><Button style={{width:'100%'}} type="dashed" size="large">Create a social card</Button></Link>
+                    <Link to='/survey'><Button style={{width:'100%'}}type="dashed" size="large">Team reflection</Button></Link>
+                    {/* <Link to='/survey'><Button style={{width:'100%'}}type="dashed" size="large">Your Timeline</Button></Link> */}
                 </div>
             </div>
         )
