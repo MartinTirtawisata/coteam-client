@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './input';
-import './register.css';
+import './registration-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/user';
 import {login} from '../actions/auth';
@@ -11,7 +11,7 @@ const matchesPassword = matches('password');
 
 
 
-export class RegisterForm extends React.Component{
+export class RegistrationForm extends React.Component{
     onSubmit(values){
         const {username, password} = values;
         const user = {username, password};
@@ -25,10 +25,6 @@ export class RegisterForm extends React.Component{
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="firstName">First name</label>
-                <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
-                <Field component={Input} type="text" name="lastName" />
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -64,4 +60,4 @@ export default reduxForm({
     form: 'register',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('register', Object.keys(errors)[0]))
-})(RegisterForm);
+})(RegistrationForm);
