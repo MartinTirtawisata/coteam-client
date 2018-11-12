@@ -52,9 +52,14 @@ export const login = (username, password) => dispatch => {
                 username, password
             })
         }).then(res => {
-            normalizeResponseErrors(res)
-        }).then(res => {res.json()
+            console.log(normalizeResponseErrors(res))
+            return normalizeResponseErrors(res)
+        }).then(res => {
+            console.log(res.json())
+            return res.json()
         }).then(({authToken}) => {
+            console.log('reached 3')
+            console.log(authToken)
             storeAuthInfo(authToken, dispatch)
         }).catch(err => {
             const {code} = err;

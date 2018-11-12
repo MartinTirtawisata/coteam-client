@@ -9,6 +9,9 @@ import SocialCardSection from './social-card-section';
 // import Sidebar from './sidebar';
 
 export default class HomePage extends React.Component {
+    componentDidMount(){
+        this.props.dispatch()
+    }
     render (){
         return(
             <div className="main-section">

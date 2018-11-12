@@ -6,13 +6,13 @@ import SurveyText from './survey-text';
 
 import {connect} from 'react-redux';
 
-import {fetchSurvey} from '../actions/actionIndex';
+// import {fetchSurvey} from '../actions/actionIndex';
 
 
 export class SurveySection extends React.Component{
-    componentDidMount(){
-        this.props.dispatch(fetchSurvey());
-    }
+    // componentDidMount(){
+    //     this.props.dispatch(fetchSurvey());
+    // }
     render(){
         return (
             <div className="question-form-section">
