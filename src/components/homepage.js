@@ -9,13 +9,14 @@ import SocialCardSection from './social-card-section';
 // import Sidebar from './sidebar';
 
 export default class HomePage extends React.Component {
-    componentDidMount(){
-        this.props.dispatch()
-    }
+    // componentDidMount(){
+    //     this.props.dispatch()
+    // }
     render (){
         return(
             <div className="main-section">
                 <div className="content-page">
+
                     <div className="top-header">
                         <div className="user-display">
                             <p>Martin Tirtawisata</p>
@@ -28,7 +29,9 @@ export default class HomePage extends React.Component {
                              */}
                         </div>
                     </div>
+                    
                     <SocialCardSection />
+
                 </div>
                 <div className="sidebar-menu">
                     <Link to='/social-card'><Button style={{width:'100%'}} type="dashed" size="large">Create a social card</Button></Link>

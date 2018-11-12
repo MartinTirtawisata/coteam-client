@@ -57,7 +57,7 @@ export const login = (username, password) => dispatch => {
         }).then(res => {
             console.log(res.json())
             return res.json()
-        }).then(({authToken}) => {
+        }).then((authToken) => {
             console.log('reached 3')
             console.log(authToken)
             storeAuthInfo(authToken, dispatch)

@@ -5,17 +5,11 @@ import './social-card-section.css'
 
 import {connect} from 'react-redux';
 
-// import {addSocialCard, fetchCard} from '../actions/actionIndex';
-
-
 export class SocialCardSection extends React.Component {
-    // componentDidMount(){
-    //     this.props.dispatch(fetchCard());
-    // }
+    componentDidMount(){
+        this.props.dispatch(fetchCard());
+    }
 
-    // addSocialCard(first_name, last_name, job_title, experience, interests, personality, thoughts) {
-    //     this.props.dispatch(addSocialCard(first_name, last_name, job_title, experience, interests, personality, thoughts))
-    // }
     render(){
         return (
             <div className="social-card-section">
