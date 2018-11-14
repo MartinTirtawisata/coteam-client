@@ -2,18 +2,28 @@ import React from 'react';
 import Input from './input';
 import './social-card-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
-import {createSocialCard} from '../actions/actionIndex'
+import {editSocialCard} from '../actions/actionIndex'
 import {required, nonEmpty} from '../validators';
 
-export class SocialCardForm extends React.Component {
+export class SocialCardFormEdit extends React.Component {
+    constructor(props){
+        super(props);
+        
+        this.state = {}
+    }
     onSubmit(values){
         console.log(values);
+        console.log(this.props.socialcardid)
+        const socialCardId = this.props.socialcardid
         const {first_name, last_name, job_title, experience, interest, personality, skill, thought} = values;
         const card = {first_name, last_name, job_title, experience, interest, personality, skill, thought};
-        return this.props.dispatch(createSocialCard(card))
+        return this.props.dispatch(editSocialCard(card, socialCardId))
     }
 
+    
+
     render(){
+
         return (
             <form
             className="social-card-form"
@@ -88,4 +98,4 @@ export class SocialCardForm extends React.Component {
     
 }
 
-export default reduxForm({form: 'createSocialCard', onSubmitFail: (errors, dispatch) => dispatch(focus('createSocialCard', Object.keys(errors)[0]))})(SocialCardForm);
+export default reduxForm({form: 'editSocialCard', onSubmitFail: (errors, dispatch) => dispatch(focus('editSocialCard', Object.keys(errors)[0]))})(SocialCardFormEdit);

@@ -55,12 +55,12 @@ export const login = (username, password) => dispatch => {
             console.log(normalizeResponseErrors(res))
             return normalizeResponseErrors(res)
         }).then(res => {
-            console.log(res.json())
+            // console.log(res.json())
             return res.json()
         }).then((authToken) => {
             console.log('reached 3')
             console.log(authToken)
-            storeAuthInfo(authToken, dispatch)
+            return storeAuthInfo(authToken, dispatch)
         }).catch(err => {
             const {code} = err;
             const message = code === 401 ? 'Incorrect username or password' : 'Unable to login, please try again';
