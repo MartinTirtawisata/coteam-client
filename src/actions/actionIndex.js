@@ -25,7 +25,7 @@ export const createSocialCard = (card) => dispatch => {
     })
 }
 
-export const editSocialCard = (card, socialCardId) => dispatch => {
+export const editCard = (card, socialCardId) => dispatch => {
     return fetch(`${API_BASE_URL}/social-card/${socialCardId}`, {
         method: 'PUT',
         headers: {
