@@ -6,6 +6,10 @@ import {Link} from 'react-router-dom';
 import {Progress, Avatar, Icon} from 'antd';
 
 export default class CardBanner extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
     render(){
         const editIcon = {
             display: "inline-block", 
@@ -22,7 +26,7 @@ export default class CardBanner extends React.Component {
                     <div className="banner-header-user">
                         <h1>Martin</h1> 
                         <p>Software Engineer</p>
-                        <p>Personality: Introvert</p>
+                        <p>Personality: {this.props.card.personality}</p>
                     </div>
                     <div className="banner-header-progress-dashboard">
                         <Progress style={{paddingRight:'50px'}} size="small" type="dashboard" percent={90} width={100} format={(percent) => `${percent}% Profile Done`}  />

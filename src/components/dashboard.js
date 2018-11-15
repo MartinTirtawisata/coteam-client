@@ -4,19 +4,25 @@ import 'antd/dist/antd.css';
 
 import CardBanner from './card-banner';
 import Section from './section';
+import {connect} from 'react-redux';
+import {fetchProtectedCard} from '../actions/actionIndex';
 
-export default class Dashboard extends React.Component {
-    // componentDidMount(){
-    //     this.props.dispatch()
-    // }
+export class Dashboard extends React.Component {
+    componentDidMount(){
+        this.props.dispatch(fetchProtectedCard())
+    }
     
-    render (){
-                
+    render (){      
+        console.log(this.props.card)  
         return(
             <div className="homepage col-12">
-                <CardBanner />
-                <Section />
+                <CardBanner card={this.props.card} />
+                <Section card={this.props.card} />
             </div>
         )
     }
 }
+const mapStateToProps = state => ({
+    card: state.index.card
+})
+export default connect(mapStateToProps)(Dashboard)

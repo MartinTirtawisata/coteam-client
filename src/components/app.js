@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet'
 import Dashboard from './dashboard';
-import SurveySection from './survey-section';
 import RegistrationSection from './registration-section';
 import LoginForm from './login-form';
 import SocialCardForm from './social-card-form';

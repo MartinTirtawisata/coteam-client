@@ -8,7 +8,12 @@ import {Icon, Steps, Card, Tag} from 'antd';
 const Step = Steps.Step;
 
 export default class Section extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
     render (){
+        // Need to map out data list for skills and interests
         function log(e) {
             e.preventDefault();
         }
@@ -25,7 +30,7 @@ export default class Section extends React.Component {
                     <h1>Thoughts on teamwork</h1>
                     <Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
                     <div className="section-header-content">
-                        <Tag>I think that teamwork is the core of the team and essential to success.</Tag>
+                        <Tag>{this.props.card.thought}</Tag>
                     </div>
                 </div>
 
@@ -33,28 +38,28 @@ export default class Section extends React.Component {
                     <div className="section-left col-6">
                         <h1>Experiences</h1><Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
                         
-                        <Steps progressDot direction="vertical" size="default" current={2}>
-                            <Step title="Rebelworks" description="I went to Rebelworks for my intership in Indonesia" />
-                            <Step title="BJames" description="An intern I took in the US" />
-                            <Step title="Thinkful" description="A Online Intensive bootcamp that I took to enchance my web developing skills" />
+                        <Steps progressDot direction="vertical" size="default" current={1}>
+                            <Step title={this.props.card.experience} />
+                            <Step title={this.props.card.experience} />
+                            {/* <Step title="Thinkful"/> */}
                         </Steps>
                     </div>
                     <div className="section-right col-6">
                         <h1>About</h1><Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
                             <Card title="Interests" style={{ width: '100%', borderRadius: '10px', backgroundColor: 'transparent'}}>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Basketball</Tag>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Gaming</Tag>
+                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>{this.props.card.interest}</Tag>
+                                {/* <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Gaming</Tag>
                                 <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Solving Problems</Tag>
                                 <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Singing</Tag>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Watching</Tag>
+                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Watching</Tag> */}
                             </Card>
                             <br></br>
                             <Card title="Skills" style={{ width: '100%', borderRadius: '10px', backgroundColor: 'transparent'}}>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Basketball</Tag>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Gaming</Tag>
+                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>{this.props.card.skill}</Tag>
+                                {/* <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Gaming</Tag>
                                 <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Solving Problems</Tag>
                                 <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Singing</Tag>
-                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Watching</Tag>
+                                <Tag style={{backgroundColor: 'transparent'}} closable onClose={log}>Watching</Tag> */}
                             </Card>
                     </div>
                 </div>
