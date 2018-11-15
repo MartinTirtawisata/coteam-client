@@ -1,13 +1,11 @@
 .homepage {
     padding: 5px;
-    width: 100%;
+    border: black 1px solid;
 }
 
 .banner {
-    width: 100%;
     border: 1px solid grey;
     border-radius: 5px;
-    
 }
 
 .banner-header {
@@ -37,13 +35,21 @@
     font-size: 14px;
 }
 
-.banner-header-progress {
+.banner-header-progress-dashboard {
     display: inline-block;
     float: right;
 }
 
+.banner-header-progress-line {
+    display: none;
+}
+
 .banner-footer {
     margin-left: 10px;
+}
+
+.section {
+    padding-top: 10px;
 }
 
 .section-header {
@@ -58,13 +64,12 @@
 .mid-section {
     display: flex;
     margin-top: 10px;
-
 }
 
 .section-left {
     padding: 10px 0 10px 40px;
     margin-right: 10px;
-    max-width: 400px;
+    
     flex: 1;
     border: 1px solid grey;
     border-radius: 5px;
@@ -72,7 +77,7 @@
 
 .section-right {
     padding: 10px 55px 10px 55px;
-    max-width: 400px;
+    
     flex: 1;
     border: 1px solid grey;
     border-radius: 5px;
@@ -84,48 +89,18 @@
     padding: 0
 }
 
+/* Anything < 640px, the code applies */
+@media only screen and (max-width: 640px){
+    .mid-section {
+        display: block;
+    }
+    .banner-header-progress-dashboard {
+        display: none;
+    }
 
-
-
-
-
-
-
-
-
-
-
-.content-page{
-    width: 600px;
-    flex: 1;
-    margin-left: auto;
-    margin-right: auto;
-} 
-
-.top-header {
-    display: flex;
-    width: 100%;
-    padding: 15px 0 10px 15px;
-
-}
-
-.user-display {
-    width: 300px;
-    font-weight: bold;
-
-}
-
-.user-title {
-    font-size: 14px;
-}
-
-.progress-checklist-display{
-    width: 500px; 
-    padding-left: 90px;
-}
-
-.sidebar-menu {
-    width: 200px;
-    flex:1;
-    margin-top: 105px;
+    .banner-header-progress-line {
+        display: block;
+        padding-top: 15px;
+        padding-right: 50px;
+    }
 }

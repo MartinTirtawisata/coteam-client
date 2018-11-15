@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+ 
+.container{
+    padding: 2px 16px;
+}
+
+.row {
+    max-width: 1000px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+    /* Clearfix */
+.row::before,
+.row::after {
+    display: table;
+    content: '';
+}
+.row::after {
+    clear: both;
+}
+.col-3, .col-4, .col-6, .col-9, .col-12 {
+    float: left;
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+}
+    /* Mobile defaults */
+.col-3, .col-4, .col-6, .col-9, .col-12 {
+    width: 100%;
+}
+    
+    /* Non-mobile, grid */
+    /* Anything > 640px, the code applies */
+@media only screen and (min-width: 640px) {
+    /* 3 columns, 3/12 in % */
+    .col-3 {
+        width: 25%;
+    }
+        /* 4 columns, 4/12 in % */
+    .col-4 {
+        width: 33.333333%;
+    }
+        /* 6 columns, 6/12 in % */
+    .col-6 {
+        width: 50%;
+    }
+    /* 9 columns */
+    .col-9{
+        width: 75%
+    }
+        /* 12 columns, 12/12 in % */
+    .col-12 {
+        width: 100%;
+    }
+}

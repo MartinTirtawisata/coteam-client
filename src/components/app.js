@@ -1,4 +1,7 @@
 import React from 'react';
+
+
+
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet'
 import HomePage from './homepage';
@@ -10,7 +13,13 @@ import SocialCardFormEdit from './social-card-form-edit';
 import LandingPage from './landingpage';
 import {connect} from 'react-redux';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+library.add(faStroopwafel)
+
 import './app.css';
+import './float-grid.css';
 
 export class App extends React.Component {
     render(){
