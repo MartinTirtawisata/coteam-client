@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Helmet} from 'react-helmet'
 import HomePage from './homepage';
 import SurveySection from './survey-section';
 import RegistrationSection from './registration-section';
@@ -25,17 +26,16 @@ export class App extends React.Component {
                             <li><Link to="/login">Log In</Link></li>
                         </ul>
                     </nav>
-                    <Route exact path="/" component={LandingPage} />
-                    <div style={{maxWidth: '800px', marginLeft:'auto', marginRight:'auto'}}>
-                        <main>
-                            <Route exact path="/home" component={HomePage} />
-                            <Route exact path="/survey" component={SurveySection} />
-                            <Route exact path="/register" component={RegistrationSection} />
-                            <Route exact path="/login" component={LoginForm} />
-                            <Route exact path='/social-card' component={SocialCardForm} />
-                            <Route exact path='/social-card-edit' render={(props) => <SocialCardFormEdit socialcardid={this.props.socialCard.id}/>} />
-                        </main>
-                    </div>
+                    <Route exact path="/" component={LandingPage} />      
+                    <main>
+                        <Route exact path="/home" component={HomePage} />
+                        <Route exact path="/survey" component={SurveySection} />
+                        <Route exact path="/register" component={RegistrationSection} />
+                        <Route exact path="/login" component={LoginForm} />
+                        <Route exact path='/social-card' component={SocialCardForm} />
+                        <Route exact path='/social-card-edit' render={(props) => <SocialCardFormEdit socialcardid={this.props.socialCard.id}/>} />
+                    </main>
+            
                 </div>
             </Router>
         );

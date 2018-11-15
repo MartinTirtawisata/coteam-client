@@ -4,7 +4,6 @@
     height: 50px;
 }
 
-
 ul {
     display: inline-block;
     margin-right: 15px;
@@ -22,3 +21,11 @@ li {
 .login-register-nav {
     float: right;
 }
+
+main {
+   
+    max-width: 800px;
+    border: 1px black solid;
+    margin: 20px auto 0px auto;;
+}
+

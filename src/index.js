@@ -11,7 +11,7 @@ import App from './components/app';
 // Creating mock data
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <App />
     </Provider>,    
     document.getElementById('root')
 );

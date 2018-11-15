@@ -1,10 +1,99 @@
-.main-section {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 800px;
-    border: 1px black solid;
-    margin: 20px auto 0px auto;;
+.homepage {
+    padding: 5px;
+    width: 100%;
 }
+
+.banner {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    
+}
+
+.banner-header {
+    padding: 20px;
+    position: relative;
+}
+
+.banner-header-avatar {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.banner-header-user {
+    display: inline-block;
+    position: absolute;
+    left: 125px;
+    top: 15px;
+}
+
+.banner-header-user > h1 {
+    padding: 0px;
+    font-size: 18px;
+}
+
+.banner-header-user > p {
+    padding: 0px;
+    font-size: 14px;
+}
+
+.banner-header-progress {
+    display: inline-block;
+    float: right;
+}
+
+.banner-footer {
+    margin-left: 10px;
+}
+
+.section-header {
+    border: 1px solid grey;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+.mid-section {
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.section-left {
+    padding: 10px 0 10px 40px;
+    margin-right: 10px;
+    max-width: 400px;
+    flex: 1;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.section-right {
+    padding: 10px 55px 10px 55px;
+    max-width: 400px;
+    flex: 1;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.section-left > h1, .section-right > h1, .section-header > h1 {
+    color: white;
+    font-weight: bold;
+    padding: 0
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .content-page{
     width: 600px;
