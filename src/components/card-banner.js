@@ -11,12 +11,7 @@ export default class CardBanner extends React.Component {
         this.state = {}
     }
     render(){
-        const editIcon = {
-            display: "inline-block", 
-            float: "right", 
-            fontSize: '18px'
-        }
-        const cardEditFormLink = "card-edit-form"
+
         return (
             <div className="banner col-12">
                 <div className="banner-header">
@@ -42,7 +37,7 @@ export default class CardBanner extends React.Component {
                     <a href="https://medium.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="medium" /></a>
                     <a href="https://linkedin.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="linkedin" /></a>
                     <Icon style={{paddingRight: '15px', fontSize: '24px'}} type="loading" />
-                    <Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
+                    
                 </div>
             </div>
         )

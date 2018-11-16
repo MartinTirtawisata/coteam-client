@@ -1,3 +1,26 @@
+.dashboard {
+    border: black 1px solid;
+    width: 100%;
+}
+
+.dashboard-header{
+    padding: 10px;
+}
+
+.dashboard-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+ul {
+    display: block;
+}
+
 .homepage {
     padding: 5px;
     border: black 1px solid;

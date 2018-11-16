@@ -52,7 +52,7 @@ export default class Section extends React.Component {
             <div className="section col-12">
                 <div className="section-header">
                     <h1>Thoughts on teamwork</h1>
-                    <Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
+                    
                     <div className="section-header-content">
                         <Tag>{this.props.card.thought}</Tag>
                     </div>
@@ -60,14 +60,14 @@ export default class Section extends React.Component {
 
                 <div className="mid-section">
                     <div className="section-left col-6">
-                        <h1>Experiences</h1><Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
+                        <h1>Experiences</h1>
                         
                         <Steps progressDot direction="vertical" size="default" current={currentExp}>
                             {experiences}
                         </Steps>
                     </div>
                     <div className="section-right col-6">
-                        <h1>About</h1><Link to={cardEditFormLink}><Icon style={editIcon} type="edit" /></Link>
+                        <h1>About</h1>
                             <Card title="Interests" style={{ width: '100%', borderRadius: '10px', backgroundColor: 'transparent'}}>
                                 {interests}
 

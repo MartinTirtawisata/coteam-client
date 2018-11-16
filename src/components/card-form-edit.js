@@ -1,11 +1,11 @@
 import React from 'react';
 import Input from './input';
-import './card-edit-form.css';
+import './card-form.css';
 import {Redirect} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {editCard} from '../actions/actionIndex'
 
-export class CardEditForm extends React.Component {
+export class CardFormEdit extends React.Component {
     constructor(props){
         super(props);
         
@@ -16,14 +16,15 @@ export class CardEditForm extends React.Component {
     onSubmit(values){
         this.setState({submitStatus: true})
         console.log(values);
-        console.log(this.props.socialcardid)
-        const socialCardId = this.props.socialcardid
+        console.log(this.props.match.params.userId)
+        const socialCardId = this.props.match.params.userId
         const {first_name, last_name, job_title, experience, interest, personality, skill, thought} = values;
         const card = {first_name, last_name, job_title, experience, interest, personality, skill, thought};
         return this.props.dispatch(editCard(card, socialCardId))
     }
 
     render(){
+        
         
         if (this.state.submitStatus === true){
             return <Redirect to="/dashboard" />
@@ -71,4 +72,4 @@ export class CardEditForm extends React.Component {
     
 }
 
-export default reduxForm({form: 'editCard', onSubmitFail: (errors, dispatch) => dispatch(focus('editCard', Object.keys(errors)[0]))})(CardEditForm);
+export default reduxForm({form: 'editCard', onSubmitFail: (errors, dispatch) => dispatch(focus('editCard', Object.keys(errors)[0]))})(CardFormEdit);

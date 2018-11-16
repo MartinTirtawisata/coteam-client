@@ -2,10 +2,12 @@ import React from 'react';
 
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Dashboard from './dashboard';
+import UserBoard from './userboard';
 import RegistrationSection from './registration-section';
 import LoginForm from './login-form';
 import SocialCardForm from './social-card-form';
-import CardEditForm from './card-edit-form';
+import CardFormEdit from './card-form-edit';
+import CardFormAdd from './card-form-add';
 import LandingPage from './landingpage';
 import {connect} from 'react-redux';
 
@@ -28,11 +30,13 @@ export class App extends React.Component {
                     </nav>
                     <Route exact path="/" component={LandingPage} />      
                     <main>
-                        <Route exact path="/dashboard" component={Dashboard} />
+                        <Route exact path="/dashboard" render={() => <Dashboard />} />
+                        <Route exact path="/userboard/:userId" component={UserBoard} />
                         <Route exact path="/register" component={RegistrationSection} />
                         <Route exact path="/login" component={LoginForm} />
                         <Route exact path='/social-card' component={SocialCardForm} />
-                        <Route exact path='/card-edit-form' render={(props) => <CardEditForm socialcardid={this.props.socialCard.id}/>} />
+                        <Route exact path='/card-form-edit/:userId' component={CardFormEdit}/>
+                        <Route exact path="/card-form-add" component={CardFormAdd} />
                     </main>
             
                 </div>
@@ -42,7 +46,7 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    socialCard: state.index.card
+    card: state.index.card
 })
 
 export default connect(mapStateToProps)(App);

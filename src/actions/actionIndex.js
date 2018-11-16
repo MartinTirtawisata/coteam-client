@@ -2,7 +2,7 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const createSocialCard = (card) => dispatch => {
+export const addCard = (card) => dispatch => {
     return fetch(`${API_BASE_URL}/card`, {
         method: 'POST',
         headers: {
@@ -44,7 +44,7 @@ export const editCard = (card, socialCardId) => dispatch => {
     })
 }
 
-export const deleteSocialCard = (socialCardId) => dispatch => {
+export const deleteCard = (socialCardId) => dispatch => {
     return fetch(`${API_BASE_URL}/card/${socialCardId}`, {
         method: 'DELETE'
     }).then (res => normalizeResponseErrors(res))
@@ -83,10 +83,10 @@ export const fetchProtectedCard = () => (dispatch, getState) => {
         // console.log(normalizeResponseErrors(res))
         return normalizeResponseErrors(res)
     }).then(res => {
-        // console.log(res.json())
+        // console.log(typeof res.json())
         return res.json()
     }).then((card) => {
-        console.log(card)
+        // console.log(typeof card)
         return dispatch(fetchProtectedCardSuccess(card))
     }).catch(err => {
         dispatch(fetchProtectedCardError(err))
