@@ -3,7 +3,7 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const createSocialCard = (card) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card`, {
+    return fetch(`${API_BASE_URL}/card`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export const createSocialCard = (card) => dispatch => {
 }
 
 export const editCard = (card, socialCardId) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card/${socialCardId}`, {
+    return fetch(`${API_BASE_URL}/card/${socialCardId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ export const editCard = (card, socialCardId) => dispatch => {
 }
 
 export const deleteSocialCard = (socialCardId) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card/${socialCardId}`, {
+    return fetch(`${API_BASE_URL}/card/${socialCardId}`, {
         method: 'DELETE'
     }).then (res => normalizeResponseErrors(res))
     .then(res=> res.json())
@@ -74,7 +74,7 @@ export const fetchProtectedCardError = error => ({
 export const fetchProtectedCard = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken
     // console.log(authToken);
-    return fetch(`${API_BASE_URL}/social-card`,
+    return fetch(`${API_BASE_URL}/card`,
         {method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`

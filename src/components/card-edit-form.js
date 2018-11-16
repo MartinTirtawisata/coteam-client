@@ -1,17 +1,20 @@
 import React from 'react';
 import Input from './input';
 import './card-edit-form.css';
+import {Redirect} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {editCard} from '../actions/actionIndex'
-import {required, nonEmpty} from '../validators';
 
 export class CardEditForm extends React.Component {
     constructor(props){
         super(props);
         
-        this.state = {}
+        this.state = {
+            submitStatus: false
+        }
     }
     onSubmit(values){
+        this.setState({submitStatus: true})
         console.log(values);
         console.log(this.props.socialcardid)
         const socialCardId = this.props.socialcardid
@@ -21,44 +24,46 @@ export class CardEditForm extends React.Component {
     }
 
     render(){
+        
+        if (this.state.submitStatus === true){
+            return <Redirect to="/dashboard" />
+        }
+    
         return (
             
             <form className="card-edit-form col-12" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 <div className="form-left-column col-6">
                     <label htmlFor="first_name">First name</label>
-                    <Field component={Input} type="text" name="first_name" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="first_name" />
                     <label htmlFor="last_name">Last name</label>
-                    <Field component={Input} type="text" name="last_name" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="last_name" />
                     <br></br>
                     <br></br>
                     <br></br>
                     <label htmlFor="experience">Experiences</label>
-                    <Field component={Input} type="text" name="experience" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="experience" />
                     <label htmlFor="thought">Thoughts</label>
-                    <Field component={Input} type="text" name="thought" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="thought" />
                 </div>
                 <div className="form-right-column col-6">
                     <label htmlFor="job_title">Job Title</label>
-                    <Field component={Input} type="text" name="job_title" validate={[required, nonEmpty]} />    
+                    <Field component={Input} type="text" name="job_title" />    
                     <label htmlFor="personality">Personalities</label>
-                    <Field component={Input} type="text" name="personality" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="personality" />
                     <br></br>
                     <br></br>
                     <br></br>
                     <label htmlFor="interest">Interests</label>
-                    <Field component={Input} type="text" name="interest" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="interest" />
                
                     <label htmlFor="skill">Skills</label>
-                    <Field component={Input} type="text" name="skill" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="skill" />
                 </div>
                 <div className="col-12">
-                    <button className="card-edit-submit-btn"
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}>
+                    <button className="card-edit-submit-btn" type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Save
                     </button>
                 </div>
-                
             </form>
     
         )

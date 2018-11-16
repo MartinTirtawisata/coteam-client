@@ -24,8 +24,8 @@ export default class CardBanner extends React.Component {
                         <Avatar shape="square" size={90} icon="user" />
                     </div>
                     <div className="banner-header-user">
-                        <h1>Martin</h1> 
-                        <p>Software Engineer</p>
+                        <h1>{this.props.card.first_name} {this.props.card.last_name}</h1> 
+                        <p>{this.props.card.job_title}</p>
                         <p>Personality: {this.props.card.personality}</p>
                     </div>
                     <div className="banner-header-progress-dashboard">

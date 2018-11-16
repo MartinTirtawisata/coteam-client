@@ -2,16 +2,10 @@ import React from 'react';
 import Input from './input';
 import './social-card-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
-import {createSocialCard} from '../actions/actionIndex'
+// import {createSocialCard} from '../actions/actionIndex'
 import {required, nonEmpty} from '../validators';
 
 export class SocialCardForm extends React.Component {
-    onSubmit(values){
-        console.log(values);
-        const {first_name, last_name, job_title, experience, interest, personality, skill, thought} = values;
-        const card = {first_name, last_name, job_title, experience, interest, personality, skill, thought};
-        return this.props.dispatch(createSocialCard(card))
-    }
 
     render(){
         return (
