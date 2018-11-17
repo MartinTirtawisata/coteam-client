@@ -3,7 +3,7 @@ import './card-form.css';
 import {Redirect} from 'react-router-dom';
 
 import {deleteCard} from '../actions/actionIndex';
-import { connect } from 'http2';
+import { connect } from 'react-redux';
 
 export class CardFormDelete extends React.Component {
     constructor(props){
