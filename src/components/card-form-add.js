@@ -70,4 +70,4 @@ export class CardFormAdd extends React.Component {
     
 }
 
-export default reduxForm({form: 'editCard', onSubmitFail: (errors, dispatch) => dispatch(focus('editCard', Object.keys(errors)[0]))})(CardFormAdd);
+export default reduxForm({form: 'addCard', onSubmitFail: (errors, dispatch) => dispatch(focus('addCard', Object.keys(errors)[0]))})(CardFormAdd);

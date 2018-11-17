@@ -8,6 +8,7 @@ import LoginForm from './login-form';
 import SocialCardForm from './social-card-form';
 import CardFormEdit from './card-form-edit';
 import CardFormAdd from './card-form-add';
+import CardFormDelete from './card-form-delete';
 import LandingPage from './landingpage';
 import {connect} from 'react-redux';
 
@@ -36,6 +37,7 @@ export class App extends React.Component {
                         <Route exact path="/login" component={LoginForm} />
                         <Route exact path='/social-card' component={SocialCardForm} />
                         <Route exact path='/card-form-edit/:userId' component={CardFormEdit}/>
+                        <Route exact path='/card-form-delete/:userId' component={CardFormDelete}/>
                         <Route exact path="/card-form-add" component={CardFormAdd} />
                     </main>
             

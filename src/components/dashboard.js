@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchProtectedCard, deleteCard} from '../actions/actionIndex';
+import {fetchProtectedCard} from '../actions/actionIndex';
 // Import Components
 
 // Import third party libraries
@@ -16,10 +16,6 @@ const {Meta} = Card;
 export class Dashboard extends React.Component {
     componentDidMount(){
         this.props.dispatch(fetchProtectedCard())
-    }
-
-    handleClick(cardId){
-        return this.props.dispatch(deleteCard(cardId))
     }
 
     render(){
@@ -45,8 +41,17 @@ export class Dashboard extends React.Component {
                         <Card 
                             hoverable 
                             style={cardFlexBoxStyle} 
-                            actions={[<Link to={`card-form-edit/${cards._id}`}><Icon type="edit" /></Link>, <Link to="/dashboard"><Icon onClick={this.handleClick(cards._id)} type="delete" /></Link>]}>
-                                <Meta title={`${cards.first_name} ${cards.last_name}`}/>
+                            actions=
+                            {[
+                                <Link to={`card-form-edit/${cards._id}`}>
+                                    <Icon type="edit" />
+                                </Link>, 
+                                <Link to={`/card-form-delete/${cards._id}`}>
+                                    <Icon type="delete" />
+                                </Link>
+                            ]}
+                        >
+                            <Meta title={`${cards.first_name} ${cards.last_name}`}/>
                             
                         </Card>
                     </Link>
