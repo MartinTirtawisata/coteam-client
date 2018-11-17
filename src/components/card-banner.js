@@ -2,7 +2,6 @@ import React from 'react';
 import './card-banner.css';
 import 'antd/dist/antd.css';
 
-import {Link} from 'react-router-dom';
 import {Progress, Avatar, Icon} from 'antd';
 
 export default class CardBanner extends React.Component {
