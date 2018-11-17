@@ -26,7 +26,7 @@ export class UserBoard extends React.Component {
         });
         
         return(
-            <div className="homepage col-12">
+            <div className="userboard col-12">
                 {userInfo}
             </div>
         )

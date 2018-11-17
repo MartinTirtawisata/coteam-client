@@ -10,12 +10,16 @@ export default class CardBanner extends React.Component {
         this.state = {}
     }
     render(){
+        const iconStyle = {
+            paddingRight: '15px',
+            fontSize: '20px'
+        }
 
         return (
             <div className="banner col-12">
                 <div className="banner-header">
                     <div className="banner-header-avatar">
-                        <Avatar shape="square" size={90} icon="user" />
+                        <Avatar shape="circle" size={100} icon="user" />
                     </div>
                     <div className="banner-header-user">
                         <h1>{this.props.card.first_name} {this.props.card.last_name}</h1> 
@@ -30,13 +34,11 @@ export default class CardBanner extends React.Component {
                     </div>
                 </div>
                 <div className="banner-footer">
-                    <a href="https://facebook.com"><Icon style={{paddingRight: '15px', fontSize: '24px', paddingLeft: '10px', paddingBottom: '10px'}} type="facebook" /></a>
-                    <a href="https://instagram.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="instagram" /></a>
-                    <a href="https://github.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="github" /></a>
-                    <a href="https://medium.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="medium" /></a>
-                    <a href="https://linkedin.com"><Icon style={{paddingRight: '15px', fontSize: '24px'}} type="linkedin" /></a>
-                    <Icon style={{paddingRight: '15px', fontSize: '24px'}} type="loading" />
-                    
+                    <a href="https://facebook.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="facebook" /></a>
+                    <a href="https://instagram.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="instagram" /></a>
+                    <a href="https://github.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="github" /></a>
+                    <a href="https://medium.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="medium" /></a>
+                    <a href="https://linkedin.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="linkedin" /></a>
                 </div>
             </div>
         )

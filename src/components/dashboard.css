@@ -1,5 +1,4 @@
 .dashboard {
-    border: black 1px solid;
     width: 100%;
 }
 
@@ -17,99 +16,19 @@ p {
     text-align: center;
 }
 
-ul {
+.ant-card > ul {
     display: block;
 }
 
-.homepage {
-    padding: 5px;
-    border: black 1px solid;
+.hover-effect {
+    transition: transform .1s;
+    -webkit-transition: transform .1;
+    -moz-transition: transform 0.1;
+    -o-transition: transform 0.1;
 }
 
-.banner {
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-
-.banner-header {
-    padding: 20px;
-    position: relative;
-}
-
-.banner-header-avatar {
-    display: inline-block;
-    padding-right: 10px;
-}
-
-.banner-header-user {
-    display: inline-block;
-    position: absolute;
-    left: 125px;
-    top: 15px;
-}
-
-.banner-header-user > h1 {
-    padding: 0px;
-    font-size: 18px;
-}
-
-.banner-header-user > p {
-    padding: 0px;
-    font-size: 14px;
-}
-
-.banner-header-progress-dashboard {
-    display: inline-block;
-    float: right;
-}
-
-.banner-header-progress-line {
-    display: none;
-}
-
-.banner-footer {
-    margin-left: 10px;
-}
-
-.section {
-    padding-top: 10px;
-}
-
-.section-header {
-    border: 1px solid grey;
-    width: 100%;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 10px;
-}
-
-
-.mid-section {
-    display: flex;
-    margin-top: 10px;
-}
-
-.section-left {
-    padding: 10px 0 10px 40px;
-    margin-right: 10px;
-    flex: 1;
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-
-.section-right {
-    padding: 10px 55px 10px 55px;
-    
-    flex: 1;
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-
-.section-left > h1, .section-right > h1, .section-header > h1 {
-    color: white;
-    font-weight: bold;
-    padding: 0;
-    display: inline-block;
+.hover-effect:hover{
+    transform: scale(1.05);
 }
 
 /* Anything < 640px, the code applies */

@@ -2,16 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchProtectedCard} from '../actions/actionIndex';
-// Import Components
 
 // Import third party libraries
 import './dashboard.css';
 import 'antd/dist/antd.css';
-import {Card, Icon} from 'antd';
+import {Card, Icon, Button, Avatar} from 'antd';
 const {Meta} = Card;
-
-
-
 
 export class Dashboard extends React.Component {
     componentDidMount(){
@@ -20,27 +16,28 @@ export class Dashboard extends React.Component {
 
     render(){
         const cardFlexBoxStyle = {
-            minWidth: '285px',
+            minWidth: '220px',
             margin: '20px',
             borderRadius: '7px'
         }
 
         const createNewProfileStyle = {
-            width: '285px',
-            margin: '20px auto 0 auto',
-            borderRadius: '7px'
+            display: 'block',
+            margin: '10px auto 10px auto',
+            borderRadius: '5px'
         }
 
         const cardInfo = Object.keys(this.props.card).map((key, index) => {
             let i = parseInt(key, 10);
             let cards = (this.props.card[i]); 
-            // console.log(cards)
             return (
                 <div key={index}>
                     <Link to={`/userboard/${cards._id}`}>
                         <Card 
+                            className="hover-effect"
                             hoverable 
                             style={cardFlexBoxStyle} 
+                            cover={<Avatar style={{width: '100%'}} shape="square" size={150} icon="user" />}
                             actions=
                             {[
                                 <Link to={`card-form-edit/${cards._id}`}>
@@ -63,15 +60,12 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <div className="dashboard-header">
                     <Link to="/card-form-add">
-                        <Card hoverable style={createNewProfileStyle}>
-                            <p>Create A New Profile</p>
-                        </Card>
+                        <Button className="hover-effect" style={createNewProfileStyle} type="dashed" size="large">Create A New Profile</Button>
                     </Link> 
                 </div>
                 <div className="dashboard-section">
                     {cardInfo}  
-                </div>
-                
+                </div>  
             </div>
         )
     }

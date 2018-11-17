@@ -1,5 +1,5 @@
 import React from 'react';
-import './dashboard.css';
+import './section.css';
 import 'antd/dist/antd.css';
 
 import {Link} from 'react-router-dom';

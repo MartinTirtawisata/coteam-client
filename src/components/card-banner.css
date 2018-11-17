@@ -1,0 +1,53 @@
+.banner {
+    background: rgb(255,255,255, 0.3);
+    border: 2px dotted white;
+    border-radius: 5px;
+    color: rgb(51,51,51);
+}
+
+.banner-header {
+    padding: 20px;
+    position: relative;
+}
+
+.banner-header-avatar {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.banner-header-user {
+    display: inline-block;
+    position: absolute;
+    left: 140px;
+    top: 20px;
+}
+
+.banner-header-user > h1 {
+    padding: 0px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.banner-header-user > p {
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.banner-header-progress-dashboard {
+    display: inline-block;
+    float: right;
+}
+
+.banner-header-progress-line {
+    display: none;
+}
+
+.banner-footer {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.social-media-links {
+    color: rgb(51, 51, 51);
+}
