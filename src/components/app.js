@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
 import './app.css';
 import './float-grid.css';
 
-export class App extends React.Component {
+export default class App extends React.Component {
     render(){
         return (
             <Router>
@@ -46,9 +46,3 @@ export class App extends React.Component {
         );
     }
 }
-
-const mapStateToProps = state => ({
-    card: state.index.card
-})
-
-export default connect(mapStateToProps)(App);
