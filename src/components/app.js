@@ -1,16 +1,19 @@
 import React from 'react';
+
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet'
-import HomePage from './homepage';
-import SurveySection from './survey-section';
+import Dashboard from './dashboard';
+import UserBoard from './userboard';
 import RegistrationSection from './registration-section';
 import LoginForm from './login-form';
 import SocialCardForm from './social-card-form';
-import SocialCardFormEdit from './social-card-form-edit';
+import CardFormEdit from './card-form-edit';
+import CardFormAdd from './card-form-add';
+import CardFormDelete from './card-form-delete';
 import LandingPage from './landingpage';
 import {connect} from 'react-redux';
 
 import './app.css';
+import './float-grid.css';
 
 export class App extends React.Component {
     render(){
@@ -19,7 +22,7 @@ export class App extends React.Component {
                 <div>
                     <nav className="top-navbar">
                         <ul className="logo-nav">
-                            <li><Link to="/home">Logo</Link></li>
+                            <li><Link to="/dashboard">Logo</Link></li>
                         </ul>
                         <ul className="login-register-nav">
                             <li><Link to="/register">Sign Up</Link></li>
@@ -28,12 +31,14 @@ export class App extends React.Component {
                     </nav>
                     <Route exact path="/" component={LandingPage} />      
                     <main>
-                        <Route exact path="/home" component={HomePage} />
-                        <Route exact path="/survey" component={SurveySection} />
+                        <Route exact path="/dashboard" render={() => <Dashboard />} />
+                        <Route exact path="/userboard/:userId" component={UserBoard} />
                         <Route exact path="/register" component={RegistrationSection} />
                         <Route exact path="/login" component={LoginForm} />
                         <Route exact path='/social-card' component={SocialCardForm} />
-                        <Route exact path='/social-card-edit' render={(props) => <SocialCardFormEdit socialcardid={this.props.socialCard.id}/>} />
+                        <Route exact path='/card-form-edit/:userId' component={CardFormEdit}/>
+                        <Route exact path='/card-form-delete/:userId' component={CardFormDelete}/>
+                        <Route exact path="/card-form-add" component={CardFormAdd} />
                     </main>
             
                 </div>
@@ -43,7 +48,7 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    socialCard: state.index.card
+    card: state.index.card
 })
 
 export default connect(mapStateToProps)(App);

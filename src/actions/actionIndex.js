@@ -2,8 +2,8 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const createSocialCard = (card) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card`, {
+export const addCard = (card) => dispatch => {
+    return fetch(`${API_BASE_URL}/card`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,8 +25,8 @@ export const createSocialCard = (card) => dispatch => {
     })
 }
 
-export const editSocialCard = (card, socialCardId) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card/${socialCardId}`, {
+export const editCard = (card, socialCardId) => dispatch => {
+    return fetch(`${API_BASE_URL}/card/${socialCardId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -44,8 +44,8 @@ export const editSocialCard = (card, socialCardId) => dispatch => {
     })
 }
 
-export const deleteSocialCard = (socialCardId) => dispatch => {
-    return fetch(`${API_BASE_URL}/social-card/${socialCardId}`, {
+export const deleteCard = (socialCardId) => dispatch => {
+    return fetch(`${API_BASE_URL}/card/${socialCardId}`, {
         method: 'DELETE'
     }).then (res => normalizeResponseErrors(res))
     .then(res=> res.json())
@@ -74,7 +74,7 @@ export const fetchProtectedCardError = error => ({
 export const fetchProtectedCard = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken
     // console.log(authToken);
-    return fetch(`${API_BASE_URL}/social-card`,
+    return fetch(`${API_BASE_URL}/card`,
         {method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
@@ -83,10 +83,10 @@ export const fetchProtectedCard = () => (dispatch, getState) => {
         // console.log(normalizeResponseErrors(res))
         return normalizeResponseErrors(res)
     }).then(res => {
-        // console.log(res.json())
+        // console.log(typeof res.json())
         return res.json()
     }).then((card) => {
-        console.log(card)
+        // console.log(typeof card)
         return dispatch(fetchProtectedCardSuccess(card))
     }).catch(err => {
         dispatch(fetchProtectedCardError(err))
