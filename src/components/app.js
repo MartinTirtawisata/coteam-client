@@ -10,7 +10,6 @@ import CardFormEdit from './card-form-edit';
 import CardFormAdd from './card-form-add';
 import CardFormDelete from './card-form-delete';
 import LandingPage from './landingpage';
-import {connect} from 'react-redux';
 
 import './app.css';
 import './float-grid.css';

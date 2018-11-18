@@ -37,43 +37,47 @@ export default class Section extends React.Component {
             <Tag style={{backgroundColor: 'transparent'}}>{skill}</Tag>
         ));
 
-
-
-
         const editIcon = {
             display: "inline-block", 
             float: "right", 
             fontSize: '18px'
         }
         const cardEditFormLink = "card-edit-form";
+        const cardStyle = { 
+            width: '85%', 
+            borderRadius: '10px',
+            marginLeft: '25px',
+            backgroundColor: 'rgba(221,221,221,0.1)'
+        }
+            
+        
 
 
         return (
-            <div className="section col-12">
+            <div className="section">
+            
                 <div className="section-header">
-                    <h1>Thoughts on teamwork</h1>
+                <h1>My Definition of Teamwork</h1>
                     
                     <div className="section-header-content">
-                        <Tag>{this.props.card.thought}</Tag>
+                        <Tag><span className="quote">"</span>{this.props.card.thought}<span className="quote">"</span></Tag>
                     </div>
                 </div>
 
                 <div className="mid-section">
                     <div className="section-left col-6">
                         <h1>Experiences</h1>
-                        
-                        <Steps progressDot direction="vertical" size="default" current={currentExp}>
+                        <Steps className="font-color" style={{marginLeft: '25px'}} progressDot direction="vertical" size="default" current={currentExp}>
                             {experiences}
                         </Steps>
                     </div>
                     <div className="section-right col-6">
                         <h1>About</h1>
-                            <Card title="Interests" style={{ width: '100%', borderRadius: '10px', backgroundColor: 'transparent'}}>
+                            <Card title="Interests" style={cardStyle}>
                                 {interests}
-
                             </Card>
                             <br></br>
-                            <Card title="Skills" style={{ width: '100%', borderRadius: '10px', backgroundColor: 'transparent'}}>
+                            <Card title="Skills" style={cardStyle}>
                                 {skills}       
                             </Card>
                     </div>

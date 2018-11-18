@@ -1,15 +1,19 @@
 .section {
-    color: rgb(51,51,51);
-    
+    color: white;
+    width: 100%;
 }
 
 .section-header {
-    background: rgb(255,255,255, 0.3);
-    border: 2px dotted white;
+    background: rgba(51,51,51, 0.5);
+    border: 2px dotted black;
     width: 100%;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     margin-top: 10px;
+}
+
+.section-header-content {
+    margin-left: 25px;
 }
 
 
@@ -22,22 +26,39 @@
     padding: 10px 0 10px 40px;
     margin-right: 10px;
     flex: 1;
-    background: rgb(255,255,255, 0.3);
-    border: 2px dotted white;
+    background: rgba(51,51,51, 0.5);
+    border: 2px dotted black;
     border-radius: 5px;
 }
 
 .section-right {
     padding: 10px 55px 10px 55px;
     flex: 1;
-    background: rgb(255,255,255, 0.3);
-    border: 2px dotted white;
+    background: rgba(51,51,51, 0.5);
+    border: 2px dotted black;
     border-radius: 5px;
 }
 
 .section-left > h1, .section-right > h1, .section-header > h1 {
-    color: rgb(51,51,51);
-    padding: 0;
+    color: white;
+    margin-left: 25px;
     display: inline-block;
     font-size: 18px;
+    font-weight: bold;
+}
+
+.quote {
+    font-size: 18px;
+}
+
+.ant-card-head{
+    padding: 0 12px;
+}
+
+.ant-card-body {
+    padding: 20px 10px;
+}
+
+.font-color {
+    color: white;
 }

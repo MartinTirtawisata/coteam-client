@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
+import { Button } from 'antd';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import './login-form.css'
@@ -43,9 +44,11 @@ export class LoginForm extends React.Component{
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <Button style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
+
+                {/* <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
-                </button>
+                </button> */}
             </form>
         );
     }

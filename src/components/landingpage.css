@@ -1,0 +1,33 @@
+.landing-page{
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(51, 51 ,51, 0.3);  
+    padding: 10px 0 100px 0;
+    color: white;
+}
+
+.landing-page > h2 {
+    text-align: center;
+    color: white;
+}
+
+.landing-page-header{
+    text-align: center;
+    padding: 10px;
+}
+
+.landing-page-header > h1 {
+    color: white;
+}
+
+.landing-page-section {
+    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.landing-page-footer{
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+

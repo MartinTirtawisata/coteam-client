@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from './input';
+import { Button } from 'antd';
 import './registration-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/user';
@@ -22,7 +23,7 @@ export class RegistrationForm extends React.Component{
     render(){
         return (
             <form
-                className="login-form"
+                className="registration-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -47,11 +48,7 @@ export class RegistrationForm extends React.Component{
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <button
-                    type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>
-                    Register
-                </button>
+                <Button style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
             </form>
         );
     }
