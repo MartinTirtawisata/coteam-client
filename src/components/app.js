@@ -12,22 +12,46 @@ import CardFormAdd from './card-form-add';
 import CardFormDelete from './card-form-delete';
 import LandingPage from './landingpage';
 
+import {logout} from '../actions/auth';
+
 import './app.css';
 import './float-grid.css';
 
-export default class App extends React.Component {
+export class App extends React.Component {
+    componentDidMount(){
+        console.log(this.props.loggedIn)
+    }
+
+    onClickLogout = () => {
+        return this.props.dispatch(logout());
+    }
     render(){
+        let logout;
+        let login;
+        if (this.props.loggedIn !== null) {
+            logout = <div>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
+                        <li><Link onClick={this.onClickLogout} to="/">Log Out</Link></li>
+                    </div>;
+        } 
+        
+        if (!(this.props.loggedIn)){
+        login = <div> 
+                    <li><Link to="/register">Sign Up</Link></li>
+                    <li><Link to="/login">Log In</Link></li>
+                </div>
+        }
         return (
             <Router>
                 <div>
                     <nav className="top-navbar">
                         <ul className="logo-nav">
                             <li><Link to="/">Coteam</Link></li>
-                            <li><Link to="/dashboard">Dashboard</Link></li>
+                            
                         </ul>
                         <ul className="login-register-nav">
-                          <li><Link to="/register">Sign Up</Link></li>
-                          <li><Link to="/login">Log In</Link></li>
+                            {logout}
+                            {login}
                         </ul>
                     </nav>
                     <Route exact path="/" component={LandingPage} />      
@@ -47,3 +71,8 @@ export default class App extends React.Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser
+})
+
+export default connect(mapStateToProps)(App)

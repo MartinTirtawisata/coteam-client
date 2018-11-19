@@ -1,10 +1,10 @@
 import React from 'react';
 import './landingpage.css';
 import {Link} from 'react-router-dom';
-import Dashboard from './dashboard';
-import sketch from '../sketch.png';
-import engagement from '../engagement.png';
-import culture from '../culture.jpg';
+import sketch from '../img/sketch.png';
+import engagement from '../img/engagement.png';
+import culture from '../img/culture.jpg';
+import networkPeople from '../img/network-people.png'
 import {Card, Button} from 'antd';
 const { Meta } = Card;
 
@@ -26,10 +26,17 @@ export default class LandingPage extends React.Component {
         }
         return(
             <div className="landing-page">
+                <h1>Coteam</h1>
                 <div className="landing-page-header">
-                    <h1>Coteam</h1>
-                    <p>Coteam is a platform that allows users to create a personal profile to share with their team to facilitate a better team engagement and environment. </p>
+                    
+                    <div className='left-header'>
+                        <p>Coteam is a platform that allows users to create a personal profile to share with their team to facilitate a better team engagement and environment. </p>
+                    </div>
+                    <div className='right-header'>
+                        <img alt="network of people" style={{display: 'block', margin: '0 auto', width: '650px'}} src={networkPeople}/>
+                    </div>
                 </div>
+
                 <h2>Build a better culture</h2>
                 <div className="landing-page-section">
                     

@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from './input';
+import DropDownSelect from './dropdown-select';
+import TagSelect from './tag-select';
 import './card-form.css';
 import {Redirect} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
@@ -32,39 +34,27 @@ export class CardFormEdit extends React.Component {
     
         return (
             
-            <form className="card-edit-form col-12" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-                <div className="form-left-column col-6">
-                    <label htmlFor="first_name">First name</label>
-                    <Field component={Input} type="text" name="first_name" />
-                    <label htmlFor="last_name">Last name</label>
-                    <Field component={Input} type="text" name="last_name" />
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <label htmlFor="experience">Experiences</label>
-                    <Field component={Input} type="text" name="experience" />
-                    <label htmlFor="thought">Thoughts</label>
-                    <Field component={Input} type="text" name="thought" />
-                </div>
-                <div className="form-right-column col-6">
-                    <label htmlFor="job_title">Job Title</label>
-                    <Field component={Input} type="text" name="job_title" />    
-                    <label htmlFor="personality">Personalities</label>
-                    <Field component={Input} type="text" name="personality" />
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <label htmlFor="interest">Interests</label>
-                    <Field component={Input} type="text" name="interest" />
-               
-                    <label htmlFor="skill">Skills</label>
-                    <Field component={Input} type="text" name="skill" />
-                </div>
-                <div className="col-12">
-                    <button className="card-edit-submit-btn" type="submit" disabled={this.props.pristine || this.props.submitting}>
-                        Save
-                    </button>
-                </div>
+            <form className="card-edit-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                <fieldset><h1>Edit Your Profile</h1></fieldset>
+                <label htmlFor="first_name">First name</label>
+                <Field component={Input} type="text" name="first_name" />
+                <label htmlFor="last_name">Last name</label>
+                <Field component={Input} type="text" name="last_name" />
+                <label htmlFor="job_title">Job Title</label>
+                <Field component={Input} type="text" name="job_title" /> 
+                <label htmlFor="personality">Personality</label>
+                <Field component={DropDownSelect} name="personality"/>
+                <label htmlFor="experience">Experiences</label>
+                <Field component={TagSelect} name="experience"/>
+                <label htmlFor="interest">Interests</label>
+                <Field component={TagSelect} name="interest"/>
+                <label htmlFor="skill">Skills</label>
+                <Field component={TagSelect} name="skill"/>            
+                <label htmlFor="thought">What are your thoughts on teamwork?</label>
+                <Field component={Input} type="text" name="thought" />
+                <button className="card-edit-submit-btn" type="submit" disabled={this.props.pristine || this.props.submitting}>
+                    Save
+                </button>
             </form>
     
         )

@@ -14,7 +14,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchProtectedCard())
     }
 
-    onClick = () => {
+    onClickDelete = () => {
         window.location.href = window.location.href 
     }
 
@@ -47,7 +47,7 @@ export class Dashboard extends React.Component {
                                 <Link to={`card-form-edit/${cards._id}`}>
                                     <Icon type="edit" />
                                 </Link>, 
-                                <Link onClick={this.onClick} to={`/card-form-delete/${cards._id}`}>
+                                <Link onClick={this.onClickDelete} to={`/card-form-delete/${cards._id}`}>
                                     <Icon type="delete" />
                                 </Link>
                             ]}

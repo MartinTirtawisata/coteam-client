@@ -12,12 +12,30 @@
 }
 
 .landing-page-header{
+    width: 800px;
     text-align: center;
     padding: 10px;
+    display: flex;
+    margin: 0 auto;
 }
 
-.landing-page-header > h1 {
+h1 {
     color: white;
+    text-align: center;
+    font-size: 36px;
+}
+
+.left-header{
+    width: 100%;
+    margin-top: 110px;
+}
+
+.left-header > p {
+    font-size: 24px;
+}
+
+.right-header{
+    width: 50%;
 }
 
 .landing-page-section {

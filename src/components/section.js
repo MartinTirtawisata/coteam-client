@@ -2,9 +2,7 @@ import React from 'react';
 import './section.css';
 import 'antd/dist/antd.css';
 
-import {Link} from 'react-router-dom';
-import {Icon, Steps, Card, Tag} from 'antd';
-import { SSL_OP_TLS_ROLLBACK_BUG } from 'constants';
+import {Steps, Card, Tag} from 'antd';
 
 const Step = Steps.Step;
 
@@ -15,10 +13,6 @@ export default class Section extends React.Component {
     }
     
     render (){
-        function log(e) {
-            e.preventDefault();
-        }
-
         var expString = `${this.props.card.experience}`;
         var expParsedArray = expString.split(",");
         const experiences = expParsedArray.map(exp => (

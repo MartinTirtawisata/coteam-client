@@ -1,4 +1,4 @@
-import {SET_AUTH_TOKEN, CLEAR_AUTH, AUTH_REQUEST, AUTH_SUCCESS, AUTH_ERROR} from '../actions/auth';
+import {SET_AUTH_TOKEN, CLEAR_AUTH, AUTH_REQUEST, AUTH_SUCCESS, AUTH_ERROR, AUTH_LOGOUT} from '../actions/auth';
 
 const initialState = {
     authToken: null, 
@@ -32,6 +32,6 @@ export default function authReducer(state = initialState, action){
             loading: false,
             error: action.error
         });
-    }
+    } 
     return state;
 }

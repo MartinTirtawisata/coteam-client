@@ -39,7 +39,11 @@ const storeAuthInfo = (authToken, dispatch) => {
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
 }
-
+export const logout = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(clearAuth());
+    clearAuthToken(authToken);
+}
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (

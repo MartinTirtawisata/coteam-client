@@ -2,7 +2,7 @@ import React from 'react';
 import './card-banner.css';
 import 'antd/dist/antd.css';
 
-import {Progress, Avatar, Icon} from 'antd';
+import {Avatar, Icon} from 'antd';
 
 export default class CardBanner extends React.Component {
     constructor(props){
@@ -34,11 +34,11 @@ export default class CardBanner extends React.Component {
                     </div>
                 </div>
                 <div className="banner-footer">
-                    <a href="https://facebook.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="facebook" /></a>
-                    <a href="https://instagram.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="instagram" /></a>
-                    <a href="https://github.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="github" /></a>
-                    <a href="https://medium.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="medium" /></a>
-                    <a href="https://linkedin.com" target="_blank" className="social-media-links"><Icon style={iconStyle} type="linkedin" /></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-media-links"><Icon style={iconStyle} type="facebook" /></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-media-links"><Icon style={iconStyle} type="instagram" /></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-media-links"><Icon style={iconStyle} type="github" /></a>
+                    <a href="https://medium.com" target="_blank" rel="noopener noreferrer" className="social-media-links"><Icon style={iconStyle} type="medium" /></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-media-links"><Icon style={iconStyle} type="linkedin" /></a>
                 </div>
             </div>
         )

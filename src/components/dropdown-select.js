@@ -3,7 +3,7 @@ import { Select } from 'antd';
 
 const Option = Select.Option;
 
-export default class MySelect extends React.Component {
+export default class DropDownSelect extends React.Component {
     componentDidMount(){
         console.log(this.props);
     }
@@ -13,8 +13,8 @@ export default class MySelect extends React.Component {
         }
     }
 
-    onChange(value, options){
-        console.log(value, options)
+    onChange(value){
+        console.log(value)
         this.props.input.onChange(value);
     }
 
@@ -37,18 +37,10 @@ export default class MySelect extends React.Component {
                     {error}
                     {warning}
                 </label>
-                {/* <Select defaultValue="Neutral" value={userInput => (this.input = userInput)}> */}
-                <Select onChange={this.onChange}>
-                    <Option value="introvert">Introvert</Option>
-                    <Option value="extrovert">Extrovert</Option>
+                <Select defaultValue="Neutral" onChange={value => this.onChange(value)}>
+                    <Option value="Introvert">Introvert</Option>
+                    <Option value="Extrovert">Extrovert</Option>
                 </Select>
-                {/* <input
-                    {...this.props.input}
-                    id={this.props.input.name}
-                    type={this.props.type}
-                    ref={userInput => (this.input = userInput)}
-                    placeholder={this.props.placeholder}
-                /> */}
             </div>
         );
     }
