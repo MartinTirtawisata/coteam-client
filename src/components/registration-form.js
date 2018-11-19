@@ -27,12 +27,13 @@ export class RegistrationForm extends React.Component{
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Email or Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
+                    placeholder="Email or Username"
                 />
                 <label htmlFor="password">Password</label>
                 <Field
@@ -40,6 +41,7 @@ export class RegistrationForm extends React.Component{
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
+                    placeholder="Password"
                 />
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field
@@ -47,8 +49,10 @@ export class RegistrationForm extends React.Component{
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
+                    placeholder="Confirm Password"
                 />
-                <Button style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
+
+                <Button htmlType="submit" disabled={this.props.pristine || this.props.submitting} style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
             </form>
         );
     }

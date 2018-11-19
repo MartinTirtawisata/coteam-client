@@ -1,10 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Dashboard from './dashboard';
 import UserBoard from './userboard';
 import RegistrationSection from './registration-section';
-import LoginForm from './login-form';
+import LoginSection from './login-section';
 import SocialCardForm from './social-card-form';
 import CardFormEdit from './card-form-edit';
 import CardFormAdd from './card-form-add';
@@ -21,11 +22,12 @@ export default class App extends React.Component {
                 <div>
                     <nav className="top-navbar">
                         <ul className="logo-nav">
-                            <li><Link to="/dashboard">Logo</Link></li>
+                            <li><Link to="/">Coteam</Link></li>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
                         </ul>
                         <ul className="login-register-nav">
-                            <li><Link to="/register">Sign Up</Link></li>
-                            <li><Link to="/login">Log In</Link></li>
+                          <li><Link to="/register">Sign Up</Link></li>
+                          <li><Link to="/login">Log In</Link></li>
                         </ul>
                     </nav>
                     <Route exact path="/" component={LandingPage} />      
@@ -33,7 +35,7 @@ export default class App extends React.Component {
                         <Route exact path="/dashboard" render={() => <Dashboard />} />
                         <Route exact path="/userboard/:userId" component={UserBoard} />
                         <Route exact path="/register" component={RegistrationSection} />
-                        <Route exact path="/login" component={LoginForm} />
+                        <Route exact path="/login" component={LoginSection} />
                         <Route exact path='/social-card' component={SocialCardForm} />
                         <Route exact path='/card-form-edit/:userId' component={CardFormEdit}/>
                         <Route exact path='/card-form-delete/:userId' component={CardFormDelete}/>

@@ -14,6 +14,10 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchProtectedCard())
     }
 
+    onClick = () => {
+        window.location.href = window.location.href 
+    }
+
     render(){
         const cardFlexBoxStyle = {
             minWidth: '220px',
@@ -43,7 +47,7 @@ export class Dashboard extends React.Component {
                                 <Link to={`card-form-edit/${cards._id}`}>
                                     <Icon type="edit" />
                                 </Link>, 
-                                <Link to={`/card-form-delete/${cards._id}`}>
+                                <Link onClick={this.onClick} to={`/card-form-delete/${cards._id}`}>
                                     <Icon type="delete" />
                                 </Link>
                             ]}
@@ -72,7 +76,7 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    card: state.index.card
+    card: state.index.card,
 })
 
 export default connect(mapStateToProps)(Dashboard);

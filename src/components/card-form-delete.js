@@ -22,6 +22,7 @@ export class CardFormDelete extends React.Component {
 
     render(){
         if (this.state.submitStatus === true){
+            // window.location.href = window.location.href 
             return <Redirect to="/dashboard" />
         }
     

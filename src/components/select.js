@@ -1,10 +1,21 @@
 import React from 'react';
+import { Select } from 'antd';
 
-export default class Input extends React.Component {
+const Option = Select.Option;
+
+export default class MySelect extends React.Component {
+    componentDidMount(){
+        console.log(this.props);
+    }
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
         }
+    }
+
+    onChange(value, options){
+        console.log(value, options)
+        this.props.input.onChange(value);
     }
 
     render() {
@@ -26,13 +37,18 @@ export default class Input extends React.Component {
                     {error}
                     {warning}
                 </label>
-                <input
+                {/* <Select defaultValue="Neutral" value={userInput => (this.input = userInput)}> */}
+                <Select onChange={this.onChange}>
+                    <Option value="introvert">Introvert</Option>
+                    <Option value="extrovert">Extrovert</Option>
+                </Select>
+                {/* <input
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
                     ref={userInput => (this.input = userInput)}
                     placeholder={this.props.placeholder}
-                />
+                /> */}
             </div>
         );
     }

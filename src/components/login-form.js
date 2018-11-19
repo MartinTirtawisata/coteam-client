@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import { Button } from 'antd';
+import {Redirect} from 'react-router-dom';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import './login-form.css'
@@ -10,6 +11,10 @@ export class LoginForm extends React.Component{
     onSubmit(values){
         console.log(values)
         return this.props.dispatch(login(values.username, values.password));
+    }
+
+    handleClick(){
+        return <Redirect to="/dashboard" />
     }
 
     render(){
@@ -35,6 +40,7 @@ export class LoginForm extends React.Component{
                     name="username"
                     id="username"
                     validate={[required, nonEmpty]}
+                    placeholder="Username or Email"
                 />
                 <label htmlFor="password">Password</label>
                 <Field
@@ -43,12 +49,10 @@ export class LoginForm extends React.Component{
                     name="password"
                     id="password"
                     validate={[required, nonEmpty]}
+                    placeholder="Password"
                 />
-                <Button style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
+                <Button onClick={this.handleClick()} htmlType="submit" style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
 
-                {/* <button disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button> */}
             </form>
         );
     }

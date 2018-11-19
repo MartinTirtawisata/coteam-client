@@ -1,9 +1,9 @@
 .banner {
     width: 100%;
-    background: rgba(51,51,51, 0.5);
-    border: 2px dotted black;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid white;
     border-radius: 5px;
-    color: white;
+    color: rgb(51,51,51);
 }
 
 /* background: rgb(255,255,255, 0.3); */
@@ -29,7 +29,7 @@
     padding: 0px;
     font-size: 18px;
     text-align: left;
-    color: white;
+    color: rgb(51,51,51);
 }
 
 .banner-header-user > p {
@@ -53,5 +53,5 @@
 }
 
 .social-media-links {
-    color: white
+    color: rgb(51,51,51);
 }

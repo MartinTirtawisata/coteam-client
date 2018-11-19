@@ -1,10 +1,16 @@
 import React from 'react';
 import Input from './input';
+import MySelect from './select';
 import './card-form.css';
 import {Redirect} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {addCard} from '../actions/actionIndex'
 import {nonEmpty, required} from '../validators';
+
+import { Select } from 'antd';
+
+const Option = Select.Option;
+
 
 export class CardFormAdd extends React.Component {
     constructor(props){
@@ -23,46 +29,39 @@ export class CardFormAdd extends React.Component {
     }
 
     render(){
-        
+        const selectStyle = {width: '100%', height: '35px', padding: '2px', margin: '5px'}
+
         if (this.state.submitStatus === true){
             return <Redirect to="/dashboard" />
         }
     
         return (
-            
-            <form className="card-edit-form col-12" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-                <div className="form-left-column col-6">
-                    <label htmlFor="first_name">First name</label>
+            <form className="card-edit-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                <label htmlFor="first_name">First name</label>
                     <Field component={Input} type="text" name="first_name" required={[nonEmpty, required]} />
                     <label htmlFor="last_name">Last name</label>
                     <Field component={Input} type="text" name="last_name" />
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <label htmlFor="experience">Experiences</label>
-                    <Field component={Input} type="text" name="experience" />
-                    <label htmlFor="thought">Thoughts</label>
-                    <Field component={Input} type="text" name="thought" />
-                </div>
-                <div className="form-right-column col-6">
                     <label htmlFor="job_title">Job Title</label>
-                    <Field component={Input} type="text" name="job_title" />    
-                    <label htmlFor="personality">Personalities</label>
-                    <Field component={Input} type="text" name="personality" />
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <Field component={Input} type="text" name="job_title" /> 
+                    <label htmlFor="personality">Personality</label>
+                    {/* <Field component={Input} type="text" name="personality" /> */}
+                    <Field component={MySelect} name="personality"/>
+                    
+                    <label htmlFor="experience">Experiences</label>
+                    <Select mode="tags" style={selectStyle} tokenSeparators={[',']} />
+                    {/* <Field component={Input} type="text" name="experience" /> */}
                     <label htmlFor="interest">Interests</label>
-                    <Field component={Input} type="text" name="interest" />
-               
+                    <Select mode="tags" style={selectStyle} tokenSeparators={[',']} />
+                    {/* <Field component={Input} type="text" name="interest" /> */}
                     <label htmlFor="skill">Skills</label>
-                    <Field component={Input} type="text" name="skill" />
-                </div>
-                <div className="col-12">
+                    <Select mode="tags" style={selectStyle} tokenSeparators={[',']} />
+                    {/* <Field component={Input} type="text" name="skill" />  */}                 
+                    <label htmlFor="thought">What are your thoughts on teamwork?</label>
+                    <Field component={Input} type="text" name="thought" />
                     <button className="card-edit-submit-btn" type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Save
                     </button>
-                </div>
+           
             </form>
     
         )

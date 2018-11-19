@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 
 import {Link} from 'react-router-dom';
 import {Icon, Steps, Card, Tag} from 'antd';
+import { SSL_OP_TLS_ROLLBACK_BUG } from 'constants';
 
 const Step = Steps.Step;
 
@@ -28,26 +29,21 @@ export default class Section extends React.Component {
         let interestString = `${this.props.card.interest}`;
         let interestParsedArray = interestString.split(",");
         let interests = interestParsedArray.map(intText => (
-            <Tag style={{backgroundColor: 'transparent'}}>{intText}</Tag>
+            <Tag>{intText}</Tag>
         ));
 
         let skillString = `${this.props.card.skill}`;
         let skillsParsedArray = skillString.split(",");
         let skills = skillsParsedArray.map(skill => (
-            <Tag style={{backgroundColor: 'transparent'}}>{skill}</Tag>
+            <Tag>{skill}</Tag>
         ));
 
-        const editIcon = {
-            display: "inline-block", 
-            float: "right", 
-            fontSize: '18px'
-        }
-        const cardEditFormLink = "card-edit-form";
         const cardStyle = { 
             width: '85%', 
-            borderRadius: '10px',
+            borderRadius: '4px',
             marginLeft: '25px',
-            backgroundColor: 'rgba(221,221,221,0.1)'
+            backgroundColor: 'rgba(51,51,51,0.1)',
+            borderColor: 'rgb(51,51,51)'
         }
             
         
