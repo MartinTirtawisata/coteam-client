@@ -1,10 +1,9 @@
 import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
-// import {API_BASE_URL} from '../config';
+import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
-let API_BASE_URL = 'https://rocky-castle-33666.herokuapp.com/api'
 
 export const SET_AUTH_TOKEN = "SET_AUTH_TOKEN";
 export const setAuthToken = authToken => ({
