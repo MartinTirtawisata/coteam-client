@@ -1,5 +1,5 @@
 import {SubmissionError} from 'redux-form';
-import {API_BASE_URL} from '../config';
+// import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 const API_BASE_URL = 'https://rocky-castle-33666.herokuapp.com/api'
 
