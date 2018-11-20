@@ -1,5 +1,10 @@
 {
     "root": "build/",
+    "proxies": {
+        "/api/": {
+            "origin": "${API_BASE_URL}"
+        }
+    },
     "routes": {
         "/**": "index.html"
     }
