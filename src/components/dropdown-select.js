@@ -4,9 +4,6 @@ import { Select } from 'antd';
 const Option = Select.Option;
 
 export default class DropDownSelect extends React.Component {
-    componentDidMount(){
-        console.log(this.props);
-    }
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
@@ -14,7 +11,6 @@ export default class DropDownSelect extends React.Component {
     }
 
     onChange(value){
-        console.log(value)
         this.props.input.onChange(value);
     }
 

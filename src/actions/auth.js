@@ -56,14 +56,10 @@ export const login = (username, password) => dispatch => {
                 username, password
             })
         }).then(res => {
-            console.log(normalizeResponseErrors(res))
             return normalizeResponseErrors(res)
-        }).then(res => {
-            // console.log(res.json())
+        }).then(res => {   
             return res.json()
         }).then((authToken) => {
-            console.log('reached 3')
-            console.log(authToken)
             return storeAuthInfo(authToken, dispatch)
         }).catch(err => {
             const {code} = err;

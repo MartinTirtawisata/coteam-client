@@ -17,8 +17,6 @@ export class CardFormEdit extends React.Component {
     }
     onSubmit(values){
         this.setState({submitStatus: true})
-        console.log(values);
-        console.log(this.props.match.params.userId)
         const socialCardId = this.props.match.params.userId
         const {first_name, last_name, job_title, experience, interest, personality, skill, thought} = values;
         const card = {first_name, last_name, job_title, experience, interest, personality, skill, thought};

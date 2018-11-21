@@ -27,10 +27,8 @@ export default class CardBanner extends React.Component {
                         <p>Personality: {this.props.card.personality}</p>
                     </div>
                     <div className="banner-header-progress-dashboard">
-                        {/* <Progress style={{paddingRight:'50px'}} size="small" type="dashboard" percent={90} width={100} format={(percent) => `${percent}% Profile Done`}  /> */}
                         </div>
                         <div className="banner-header-progress-line">   
-                        {/* <Progress percent={90} size="small" format={(percent) => `${percent}%`}/> */}
                     </div>
                 </div>
                 <div className="banner-footer">

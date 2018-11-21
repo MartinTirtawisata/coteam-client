@@ -73,33 +73,18 @@ export const fetchProtectedCardError = error => ({
 
 export const fetchProtectedCard = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken
-    // console.log(authToken);
     return fetch(`${API_BASE_URL}/card`,
         {method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
         }
     }).then(res => {
-        // console.log(normalizeResponseErrors(res))
         return normalizeResponseErrors(res)
     }).then(res => {
-        // console.log(typeof res.json())
         return res.json()
     }).then((card) => {
-        // console.log(typeof card)
         return dispatch(fetchProtectedCardSuccess(card))
     }).catch(err => {
         dispatch(fetchProtectedCardError(err))
     })
 }
-
-// export const fetchSurvey = () => dispatch => {
-//     fetch(`${API_BASE_URL}/survey`).then(res => {
-//         if(!res.ok){
-//             return Promise.reject(res.statusText);
-//         }
-//         return res.json();
-//     }).then(survey => {
-//         dispatch(fetchSurveySuccess(survey));
-//     })
-// }

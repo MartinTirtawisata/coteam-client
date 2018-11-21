@@ -2,7 +2,6 @@ import React from 'react';
 import Input from './input';
 import './social-card-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
-// import {createSocialCard} from '../actions/actionIndex'
 import {required, nonEmpty} from '../validators';
 
 export class SocialCardForm extends React.Component {

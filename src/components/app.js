@@ -18,10 +18,6 @@ import './app.css';
 import './float-grid.css';
 
 export class App extends React.Component {
-    componentDidMount(){
-        console.log(this.props.loggedIn)
-    }
-
     onClickLogout = () => {
         return this.props.dispatch(logout());
     }

@@ -20,6 +20,5 @@ describe('<CardFormAdd />', () => {
     it('submitStatus should return true submitted', () => {
         const wrapper = shallow(<Provider store={store}><CardFormAdd /></Provider>)
         wrapper.simulate('submit');
-        // expect(wrapper.state('submitStatus')).toEqual(false);
     })
 })

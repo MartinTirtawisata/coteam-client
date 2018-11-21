@@ -18,7 +18,6 @@ export class CardFormAdd extends React.Component {
     }
     onSubmit(values){
         this.setState({submitStatus: true})
-        console.log(values);
         const {first_name, last_name, job_title, experience, interest, personality, skill, thought} = values;
         const card = {first_name, last_name, job_title, experience, interest, personality, skill, thought};
         return this.props.dispatch(addCard(card))

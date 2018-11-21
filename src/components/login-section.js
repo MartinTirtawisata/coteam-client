@@ -7,7 +7,6 @@ import LoginForm from './login-form';
 export function LoginSection(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
-    console.log(props.loggedIn)
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }

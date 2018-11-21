@@ -7,7 +7,6 @@ const initialState = {
 
 export default function indexReducer(state = initialState, action){
     if (action.type === FETCH_PROTECTED_CARD_SUCCESS){
-        // console.log(action.card)
         return Object.assign({}, state, {
             card: action.card,
             error: null

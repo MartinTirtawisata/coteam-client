@@ -8,7 +8,6 @@ import './index.css';
 
 import App from './components/app';
 
-// Creating mock data
 ReactDOM.render(
     <Provider store={store}>
         <App />

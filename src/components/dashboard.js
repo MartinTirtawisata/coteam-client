@@ -2,8 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchProtectedCard} from '../actions/actionIndex';
-
-// Import third party libraries
 import './dashboard.css';
 import 'antd/dist/antd.css';
 import {Card, Icon, Button, Avatar} from 'antd';
