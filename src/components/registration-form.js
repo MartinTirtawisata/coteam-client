@@ -52,7 +52,7 @@ export class RegistrationForm extends React.Component{
                     placeholder="Confirm Password"
                 />
 
-                <Button htmlType="submit" disabled={this.props.pristine || this.props.submitting} style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
+                <Button htmlType="submit" disabled={this.props.pristine || this.props.submitting} style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Sign Up</Button>
             </form>
         );
     }
