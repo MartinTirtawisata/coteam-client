@@ -26,33 +26,37 @@ export class LoginForm extends React.Component{
             );
         }
         return (
-            <form
-                className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                {error}
-                <label htmlFor="username">Username</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    id="username"
-                    validate={[required, nonEmpty]}
-                    placeholder="Username or Email"
-                />
-                <label htmlFor="password">Password</label>
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    id="password"
-                    validate={[required, nonEmpty]}
-                    placeholder="Password"
-                />
-                <Button onClick={this.handleClick()} htmlType="submit" style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
-
-            </form>
+            <div>
+                <form
+                    className="login-form"
+                    onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values)
+                    )}>
+                    {error}
+                    <label htmlFor="username">Username</label>
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="username"
+                        id="username"
+                        validate={[required, nonEmpty]}
+                        placeholder="Username or Email"
+                    />
+                    <label htmlFor="password">Password</label>
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="password"
+                        id="password"
+                        validate={[required, nonEmpty]}
+                        placeholder="Password"
+                    />
+                    <Button onClick={this.handleClick()} htmlType="submit" style={{display: 'block', margin: '20px auto 0 auto', width: '25%'}} block>Log In</Button>
+                </form>
+                <p>For demonstration purposes, type in the following: </p>
+                <p>Username: exampleUser </p>
+                <p>Password: exampleUser </p>
+            </div>
         );
     }
 }

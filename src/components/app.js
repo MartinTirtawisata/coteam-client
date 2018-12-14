@@ -16,25 +16,32 @@ import {logout} from '../actions/auth';
 
 import './app.css';
 import './float-grid.css';
+import { nonEmpty } from '../validators';
 
 export class App extends React.Component {
     onClickLogout = () => {
         return this.props.dispatch(logout());
     }
     render(){
+        let linkStyle = {
+            textDecoration: 'none',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '16px'
+        }
         let logout;
         let login;
         if (this.props.loggedIn !== null) {
             logout = <div>
-                        <li><Link to="/dashboard">Dashboard</Link></li>
-                        <li><Link onClick={this.onClickLogout} to="/">Log Out</Link></li>
+                        <li><Link style={linkStyle} to="/dashboard">Dashboard</Link></li>
+                        <li><Link style={linkStyle} onClick={this.onClickLogout} to="/">Log Out</Link></li>
                     </div>;
         } 
         
         if (!(this.props.loggedIn)){
         login = <div> 
-                    <li><Link to="/register">Sign Up</Link></li>
-                    <li><Link to="/login">Log In</Link></li>
+                    <li><Link style={linkStyle} to="/register">Sign Up</Link></li>
+                    <li><Link style={linkStyle} to="/login">Log In</Link></li>
                 </div>
         }
         return (
@@ -42,7 +49,7 @@ export class App extends React.Component {
                 <div>
                     <nav className="top-navbar">
                         <ul className="logo-nav">
-                            <li><Link to="/">Coteam</Link></li>
+                            <li><Link style={linkStyle} to="/">Coteam</Link></li>
                             
                         </ul>
                         <ul className="login-register-nav">

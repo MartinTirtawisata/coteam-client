@@ -9,6 +9,11 @@ body {
     padding-top: 10px;
 }
 
+.top-navbar > a {
+    color: white;
+    font-weight: bold;
+}
+
 ul {
     display: inline-block;
     margin-right: 15px;
