@@ -13,7 +13,8 @@ input {
     font-size: 14px;
     border-radius: 4px;
     padding: 2px;
-    margin: 5px;
+    margin: 5px 0px;
+    border: solid 1px lightgrey
 }
 
 .card-edit-submit-btn {

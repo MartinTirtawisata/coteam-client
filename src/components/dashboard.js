@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchProtectedCard} from '../actions/actionIndex';
+import user1 from '../img/user1.jpg'
 import './dashboard.css';
 import 'antd/dist/antd.css';
 import {Card, Icon, Button, Avatar} from 'antd';
@@ -18,7 +19,7 @@ export class Dashboard extends React.Component {
 
     render(){
         const cardFlexBoxStyle = {
-            minWidth: '220px',
+            maxWidth: '220px',
             margin: '20px',
             borderRadius: '7px'
         }
@@ -39,7 +40,7 @@ export class Dashboard extends React.Component {
                             className="hover-effect"
                             hoverable 
                             style={cardFlexBoxStyle} 
-                            cover={<Avatar style={{width: '100%'}} shape="square" size={150} icon="user" />}
+                            cover={<img style={{width: '100%'}} src={user1} alt="user 1 picture" />}
                             actions=
                             {[
                                 <Link to={`card-form-edit/${cards._id}`}>
