@@ -27,6 +27,7 @@ h1 {
 .left-header{
     width: 50%;
     margin-top: 50px;
+    float: left;
 }
 
 .left-header > p {
@@ -35,6 +36,7 @@ h1 {
 
 .right-header{
     width: 50%;
+    float: left;
 }
 
 .landing-page-section {

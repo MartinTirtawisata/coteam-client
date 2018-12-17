@@ -31,6 +31,7 @@ export default class LandingPage extends React.Component {
                     
                     <div className='left-header'>
                         <p>Coteam is a platform that allows users to create a personal profile to share with their team to facilitate a better team engagement and environment. </p>
+                        <br></br>
                     </div>
                     <div className='right-header'>
                         <img alt="network of people" style={{display: 'block', margin: '0 auto', width: '120%'}} src={networkPeople}/>
@@ -38,8 +39,8 @@ export default class LandingPage extends React.Component {
                 </div>
 
                 <h2>Build a better culture</h2>
+                <p>Simply 'Sign Up', click 'Create A New Profile', and it will appear in the dashboard and shared amongst your team!</p>
                 <div className="landing-page-section">
-                    
                     <Card style={cardStyle} cover={<img src={sketch} alt="sketch" />}>
                         <Meta title="Create" description="Create a social profile and share them with your team!"/>
                     </Card>
