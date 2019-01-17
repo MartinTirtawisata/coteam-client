@@ -2,11 +2,10 @@
 Coteam is a platform that allows users to create a social profile to share with their team to facilitate a better team engagement and environment. 
 
 ## Demo
-https://hidden-shelf-59966.herokuapp.com/
+http://www.coteam.live/
  
 ## Screenshots
-![](png/LandingPage1.png)
-![](png/LandingPage2.png)
+![](png/LandingPage.png)
 ![](png/Register.png)
 ![](png/Login.png)
 ![](png/Dashboard.png)
